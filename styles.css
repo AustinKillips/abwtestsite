@@ -35,7 +35,6 @@
   --border: 2px solid var(--ink);
   --shadow: 8px 8px 0 var(--ink);
   --max-width: 1180px;
-  --page-gutter: clamp(16px, 4vw, 46px);
 }
 
 * {
@@ -52,7 +51,7 @@ body {
   color: var(--ink);
   font-family: "Crimson Pro", Georgia, serif;
   font-size: 19px;
-  line-height: 1.45;
+  line-height: 1.25;
 }
 
 img {
@@ -102,7 +101,7 @@ h3 {
 .quotes,
 .newsletter,
 .site-footer {
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 92px));
   margin-inline: auto;
 }
 
@@ -203,15 +202,12 @@ h3 {
   height: 3px;
   background: var(--ink);
   grid-column: 2;
-  justify-self: center;
 }
 
 .menu-toggle-text {
   grid-column: 1;
   grid-row: 1 / span 4;
   align-self: center;
-  justify-self: center;
-  text-align: center;
 }
 
 .site-nav a,
@@ -225,8 +221,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0.75rem 1.35rem;
+  padding: .75rem 2.5rem;
   border: var(--border);
   background: var(--yellow);
   color: var(--ink);
@@ -234,6 +229,7 @@ h3 {
   font-family: "Libertario", Impact, sans-serif;
   font-size: 1.05rem;
   line-height: 1;
+  letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -348,8 +344,7 @@ h3 {
 
 .section-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1fr);
-  gap: clamp(24px, 6vw, 80px);
+  grid-template-columns: minmax(220px, .75fr) minmax(0, 1fr);
   padding-block: clamp(72px, 10vw, 140px);
   border-top: var(--border);
 }
@@ -360,16 +355,6 @@ h3 {
   background: var(--green);
   border: var(--border);
   box-shadow: var(--shadow);
-}
-
-.intro .eyebrow,
-.impact .eyebrow {
-  margin-bottom: 0.45rem;
-}
-
-.intro h2,
-.impact h2 {
-  margin-bottom: 0;
 }
 
 .body-copy {
@@ -386,8 +371,7 @@ h3 {
   border: var(--border);
   box-shadow: var(--shadow);
   margin-inline: auto;
-  max-width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
-  overflow: clip;
+  max-width: min(var(--max-width), calc(100% - 32px));
 }
 
 .card-grid {
@@ -395,11 +379,11 @@ h3 {
 }
 
 .section-heading {
-  display: flex;
+  display: ;
   justify-content: space-between;
   align-items: end;
   gap: 32px;
-  margin-bottom: clamp(32px, 6vw, 64px);
+  margin-bottom: clamp(32px, 0vw, 64px);
 }
 
 .section-heading h2 {
@@ -410,7 +394,6 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(18px, 3vw, 34px);
-  align-items: stretch;
 }
 
 .program-card {
@@ -439,7 +422,7 @@ h3 {
 .program-card::after {
   content: "";
   position: absolute;
-  inset: 8px;
+  inset: 8px -8px -8px 8px;
   z-index: -2;
   background: var(--ink);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -581,7 +564,7 @@ h3 {
 
 .image-band {
   position: relative;
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 32px));
   min-height: clamp(360px, 52vw, 620px);
   display: grid;
   align-items: end;
@@ -661,7 +644,7 @@ h3 {
 }
 
 .photo-grid {
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 142px));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
@@ -733,7 +716,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  padding-block: clamp(72px, 10vw, 140px);
+  padding-block: clamp(72px, 1vw, 140px);
 }
 
 figure {
@@ -782,8 +765,6 @@ figcaption {
 .signup-form {
   position: relative;
   z-index: 2;
-  display: grid;
-  justify-items: center;
 }
 
 .signup-form label {
@@ -797,8 +778,6 @@ figcaption {
 .signup-form div {
   display: flex;
   gap: 12px;
-  width: min(100%, 560px);
-  justify-content: center;
 }
 
 .signup-form input {
@@ -817,7 +796,6 @@ figcaption {
   font-size: 1.1rem;
   font-weight: 800;
   text-transform: none;
-  align-self: center;
 }
 
 .site-footer {
@@ -886,7 +864,7 @@ figcaption {
 .grit-band,
 .grit-info,
 .grit-cta {
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 32px));
   margin-inline: auto;
 }
 
@@ -1112,7 +1090,7 @@ figcaption {
 
 .content-stack,
 .faq-list {
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 32px));
   display: grid;
   gap: 18px;
   margin: clamp(56px, 9vw, 110px) auto;
@@ -1147,7 +1125,7 @@ figcaption {
 
 .event-overview,
 .event-accordion {
-  width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+  width: min(var(--max-width), calc(100% - 32px));
   margin-inline: auto;
 }
 
@@ -1375,42 +1353,11 @@ figcaption {
   margin-block: clamp(48px, 8vw, 96px);
 }
 
-@media (max-width: 1100px) {
-  .card-grid,
-  .quotes,
-  .purpose-grid,
-  .info-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .impact,
-  .newsletter,
-  .grit-cta,
-  .event-overview {
-    grid-template-columns: 1fr;
-  }
-
-  .impact-copy h2,
-  .newsletter h2,
-  .grit-cta h2,
-  .event-overview h2 {
-    max-width: none;
-  }
-
-  .grit-cta img {
-    width: min(30vw, 190px);
-  }
-
-  .event-basics-card {
-    grid-column: 1;
-  }
-}
-
-@media (max-width: 980px) {
+@media (max-width: 850px) {
   .site-header {
     grid-template-columns: 1fr auto;
     align-items: start;
-    padding-inline: var(--page-gutter);
+    padding-inline: 16px;
   }
 
   .logo-primary {
@@ -1449,10 +1396,12 @@ figcaption {
 
   .hero,
   .section-grid,
+  .impact,
+  .newsletter,
   .event-overview,
   .event-detail-body,
   .grit-hero,
-  .image-band-grit {
+  .grit-cta {
     grid-template-columns: 1fr;
   }
 
@@ -1484,15 +1433,6 @@ figcaption {
   .timeline-days,
   .two-column-copy {
     grid-template-columns: 1fr;
-  }
-
-  .image-band-grit {
-    gap: 24px;
-  }
-
-  .image-band-grit img {
-    justify-self: start;
-    width: min(68vw, 360px);
   }
 
   .program-card {
@@ -1561,7 +1501,7 @@ figcaption {
   .quotes,
   .newsletter,
   .site-footer {
-    width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
+    width: min(100% - 90px, var(--max-width));
   }
 
   .hero {
@@ -1569,31 +1509,12 @@ figcaption {
   }
 
   .button {
-    width: 100%;
+    width: 72%;
+      padding: .75rem .5rem;
   }
 
   .site-header {
     width: 100%;
-  }
-
-  .section-grid,
-  .programs,
-  .impact,
-  .newsletter,
-  .site-footer,
-  .content-stack,
-  .faq-list,
-  .event-overview,
-  .event-accordion,
-  .page-hero,
-  .grit-hero,
-  .grit-intro,
-  .grit-band,
-  .grit-info,
-  .grit-cta,
-  .photo-grid,
-  .image-band {
-    width: min(var(--max-width), calc(100% - (var(--page-gutter) * 2)));
   }
 
   .menu-toggle {
@@ -1606,32 +1527,12 @@ figcaption {
   }
 
   .hero-actions {
-    align-items: center;
-  }
-
-  .hero-actions .button {
-    width: auto;
-    min-height: 46px;
-    padding: 0.65rem 1.1rem;
-    font-size: 0.95rem;
+    align-items: stretch;
   }
 
   .stats p {
     grid-template-columns: 1fr;
     gap: 0;
-  }
-
-  .signup-form div {
-    width: 100%;
-    align-items: center;
-  }
-
-  .event-accordion summary {
-    padding-left: 56px;
-  }
-
-  .photo-grid figure {
-    min-height: 260px;
   }
 
   .site-header {
